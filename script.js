@@ -14,10 +14,22 @@ var fivePm = document.getElementById('1700')
 let currentDay = dayjs().format('dddd, MMMM D')
 $("#currentDay").text(currentDay);
 // tells current time by the hour
-let hourOfDay = dayjs().hour()
+let hourOfDay = dayjs().hour();
+
 // changes class to change style based off what time it is.
 console.log(hourOfDay)
-if(hourOfDay === 9){
+// changes all to future class before the work day starts
+if(hourOfDay < 9){
+  nineAm.children[1].classList.add("future")
+  tenAm.children[1].classList.add("future")
+  elevenAm.children[1].classList.add("future")
+  twelvePm.children[1].classList.add("future")
+  onePm.children[1].classList.add("future")
+  twoPm.children[1].classList.add("future")
+  threePm.children[1].classList.add("future")
+  fourPm.children[1].classList.add("future")
+  fivePm.children[1].classList.add("future")
+}else if(hourOfDay === 9){
   nineAm.children[1].classList.add("present")
   tenAm.children[1].classList.add("future")
   elevenAm.children[1].classList.add("future")
@@ -118,6 +130,7 @@ if(hourOfDay === 9){
   fourPm.children[1].classList.add("past")
   fivePm.children[1].classList.add("present")
 }else{
+  // changes it all to past when the day is over.
   nineAm.children[1].classList.add("past")
   tenAm.children[1].classList.add("past")
   elevenAm.children[1].classList.add("past")
