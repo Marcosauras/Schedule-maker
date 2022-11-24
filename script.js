@@ -37,7 +37,7 @@ if(hourOfDay === 9){
   threePm.children[1].classList.add("future")
   fourPm.children[1].classList.add("future")
   fivePm.children[1].classList.add("future")
-}else if (hourOfDay === 0){
+}else if (hourOfDay === 11){
   nineAm.children[1].classList.add("past")
   tenAm.children[1].classList.add("past")
   elevenAm.children[1].classList.add("present")
